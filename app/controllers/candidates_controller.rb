@@ -1,5 +1,6 @@
 class CandidatesController < ApplicationController
   before_action :set_candidate, only: [:show, :edit, :update, :destroy]
+  #access user: :all
 
   # GET /candidates
   # GET /candidates.json
@@ -69,6 +70,6 @@ class CandidatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidate_params
-      params.require(:candidate).permit(:name, :cellphone, :birth_date)
+      params.require(:candidate).permit(:name, :cellphone, :birth_date, :user_id)
     end
 end
