@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_152612) do
+ActiveRecord::Schema.define(version: 2019_12_12_222249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,21 @@ ActiveRecord::Schema.define(version: 2019_12_10_152612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "genre"
+    t.string "education_level"
+    t.string "status"
+    t.string "careers"
+    t.string "languages"
+    t.string "performance_areas"
+    t.string "industry"
+    t.string "regional_candidate"
+    t.string "civil_status"
+    t.string "skills"
+    t.string "recruitment_source"
+    t.string "relocate"
+    t.string "email"
+    t.string "actual_company"
+    t.money "actual_salary", scale: 2
     t.index ["user_id"], name: "index_candidates_on_user_id"
   end
 

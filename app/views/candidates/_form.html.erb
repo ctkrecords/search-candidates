@@ -12,18 +12,84 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :name, "Nombre" %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :cellphone %>
+    <%= form.label :cellphone, "Celular" %>
     <%= form.text_field :cellphone %>
   </div>
 
   <div class="field">
-    <%= form.label :birth_date %>
+    <%= form.label :birth_date, "Fecha de nacimiento" %>
     <%= form.date_select :birth_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genre, "Género" %>
+    <%= form.select(:genre, Candidate::GENRE_LIST) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :education_level, "Nivel Educativo" %>
+    <%= form.select(:education_level, Candidate::EDUCATION_LEVEL) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status, "Estatus" %>
+    <%= form.select(:status, Candidate::STATUS) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :careers, "Carrera" %>
+    <%= form.select(:careers, Candidate::CAREERS) %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :languages, "Idiomas" %>
+    <%= form.select(:languages, Candidate::LANGUAGES) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :performance_areas, "Áreas de desempeño" %>
+    <%= form.select(:performance_areas, Candidate::PERFORMANCE_AREAS) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :industry, "Industria" %>
+    <%= form.select(:industry, Candidate::INDUSTRY) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :regional_candidate, "Candidato regional" %>
+    <%= form.select(:regional_candidate, Candidate::REGIONAL_CANDIDATE) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :civil_status, "Estado civil" %>
+    <%= form.select(:civil_status, Candidate::CIVIL_STATUS) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :skills, "Skills" %>
+    <%= form.select(:skills, Candidate::SKILLS) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :recruitment_source, "Fuente de reclutamiento" %>
+    <%= form.select(:recruitment_source, Candidate::RECRUITMENT_SOURCE) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :relocate, "Dispuesto a reubicarse" %>
+    <%= form.select(:relocate, Candidate::RELOCATE) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :actual_salary, "Salario actual / Último salario" %>
+    <%= form.text_field :actual_salary %>
   </div>
 
   <div class="actions">

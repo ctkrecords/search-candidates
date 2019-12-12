@@ -1,18 +1,83 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Nombre completo:</strong>
   <%= @candidate.name %>
 </p>
 
 <p>
-  <strong>Cellphone:</strong>
+  <strong>Celular:</strong>
   <%= @candidate.cellphone %>
 </p>
 
 <p>
-  <strong>Birth date:</strong>
+  <strong>Fecha de nacimiento:</strong>
   <%= @candidate.birth_date %>
+</p>
+
+<p>
+  <strong>Género:</strong>
+  <%= @candidate.genre %>
+</p>
+
+<p>
+  <strong>Nivel educativo:</strong>
+  <%= @candidate.education_level %>
+</p>
+
+<p>
+  <strong>Estatus:</strong>
+  <%= @candidate.status %>
+</p>
+
+<p>
+  <strong>Carrera:</strong>
+  <%= @candidate.careers %>
+</p>
+
+<p>
+  <strong>Idiomas:</strong>
+  <%= @candidate.languages %>
+</p>
+
+<p>
+  <strong>Áreas de desempeño:</strong>
+  <%= @candidate.performance_areas %>
+</p>
+
+<p>
+  <strong>Industria:</strong>
+  <%= @candidate.industry %>
+</p>
+
+<p>
+  <strong>Candidato regional:</strong>
+  <%= @candidate.regional_candidate %>
+</p>
+
+<p>
+  <strong>Estado civil:</strong>
+  <%= @candidate.civil_status %>
+</p>
+
+<p>
+  <strong>Skills:</strong>
+  <%= @candidate.skills %>
+</p>
+
+<p>
+  <strong>Fuente de reclutamiento:</strong>
+  <%= @candidate.recruitment_source %>
+</p>
+
+<p>
+  <strong>Dispuesto a reubicarse:</strong>
+  <%= @candidate.relocate %>
+</p>
+
+<p>
+  <strong>Salario actual / Último salario:</strong>
+  <%= @candidate.actual_salary %>
 </p>
 
 <%= link_to 'Edit', edit_candidate_path(@candidate) %> |

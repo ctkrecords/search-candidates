@@ -69,6 +69,8 @@ class CandidatesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def candidate_params
-      params.require(:candidate).permit(:name, :cellphone, :birth_date)
+      params.require(:candidate).permit(:name, :cellphone, :birth_date, :genre, :education_level, :careers, 
+                                        :status, :languages, :performance_areas, :industry, :regional_candidate,
+                                        :civil_status, :skills, :recruitment_source, :relocate, :actual_salary)
     end
 end
