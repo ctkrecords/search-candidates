@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_12_222249) do
+ActiveRecord::Schema.define(version: 2019_12_13_210737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(version: 2019_12_12_222249) do
     t.string "email"
     t.string "actual_company"
     t.money "actual_salary", scale: 2
+    t.money "variable_salary", scale: 2
+    t.money "wage_aspiration", scale: 2
+    t.string "position"
+    t.text "comparative_chart"
+    t.text "specific_benefit"
+    t.text "general_benefits"
+    t.text "general_comments"
+    t.text "address"
+    t.text "conditions_to_move"
+    t.string "telephone"
+    t.date "interview_date"
+    t.string "nationality"
     t.index ["user_id"], name: "index_candidates_on_user_id"
   end
 

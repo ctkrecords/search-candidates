@@ -66,6 +66,16 @@
 </p>
 
 <p>
+  <strong>Dispuesto a reubicarse:</strong>
+  <%= @candidate.relocate %>
+</p>
+
+<p>
+  <strong>Dispuesto a reubicarse:</strong>
+  <%= @candidate.relocate %>
+</p>
+
+<p>
   <strong>Fuente de reclutamiento:</strong>
   <%= @candidate.recruitment_source %>
 </p>
@@ -76,8 +86,68 @@
 </p>
 
 <p>
-  <strong>Salario actual / Último salario:</strong>
+  <strong>Salario actual / Último salario (USD):</strong>
   <%= @candidate.actual_salary %>
+</p>
+
+<p>
+  <strong>Salario variable (USD):</strong>
+  <%= @candidate.variable_salary %>
+</p>
+
+<p>
+  <strong>Aspiración salarial (USD):</strong>
+  <%= @candidate.wage_aspiration %>
+</p>
+
+<p>
+  <strong>Posición / Cargo actual:</strong>
+  <%= @candidate.position %>
+</p>
+
+<p>
+  <strong>Datos cuadro comparativo:</strong>
+  <%= @candidate.comparative_chart %>
+</p>
+
+<p>
+  <strong>Beneficio específico:</strong>
+  <%= @candidate.specific_benefit %>
+</p>
+
+<p>
+  <strong>Beneficios generales:</strong>
+  <%= @candidate.general_benefits %>
+</p>
+
+<p>
+  <strong>Comentarios generales:</strong>
+  <%= @candidate.general_comments %>
+</p>
+
+<p>
+  <strong>Dirección:</strong>
+  <%= @candidate.address %>
+</p>
+
+<p>
+  <strong>Condiciones para moverse:</strong>
+  <%= @candidate.conditions_to_move %>
+</p>
+
+<p>
+  <strong>Teléfono de casa:</strong>
+  <%= @candidate.telephone %>
+</p>
+
+<p>
+  <strong>Fecha de entrevista:</strong>
+  <%= @candidate.interview_date %>
+</p>
+
+<p>
+  <strong>Nacionalidad:</strong>
+  <%= @candidate.nationality %>
 </p>
 
 <%= link_to 'Edit', edit_candidate_path(@candidate) %> |

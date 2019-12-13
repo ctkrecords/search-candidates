@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :birth_date, "Fecha de nacimiento" %>
-    <%= form.date_select :birth_date %>
+    <%= form.date_select :birth_date, {order: [:day, :month, :year], start_year: Date.today.year - 10, end_year: Date.today.year - 100}, {required: true} %>
   </div>
 
   <div class="field">
@@ -78,6 +78,16 @@
   </div>
 
   <div class="field">
+    <%= form.label :email, "Email" %>
+    <%= form.email_field :email %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :actual_company, "Compañía actual" %>
+    <%= form.text_field :actual_company %>
+  </div>
+
+  <div class="field">
     <%= form.label :recruitment_source, "Fuente de reclutamiento" %>
     <%= form.select(:recruitment_source, Candidate::RECRUITMENT_SOURCE) %>
   </div>
@@ -88,8 +98,68 @@
   </div>
 
   <div class="field">
-    <%= form.label :actual_salary, "Salario actual / Último salario" %>
-    <%= form.text_field :actual_salary %>
+    <%= form.label :actual_salary, "Salario actual / Último salario (USD)" %>
+    <%= form.text_field :actual_salary, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :variable_salary, "Salario variable (USD)" %>
+    <%= form.text_field :variable_salary %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wage_aspiration, "Aspiración salarial (USD)" %>
+    <%= form.text_field :wage_aspiration %>
+  </div>
+
+  <div class="field">
+    <%= form.label :position, "Posición / Cargo Actual" %>
+    <%= form.text_field :position %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comparative_chart, "Datos cuadro comparativo" %>
+    <%= form.text_area :comparative_chart %>
+  </div>
+
+  <div class="field">
+    <%= form.label :specific_benefit, "Beneficio específico" %>
+    <%= form.text_area :specific_benefit %>
+  </div>
+
+  <div class="field">
+      <%= form.label :general_benefits, "Beneficios generales" %>
+      <%= form.text_area :general_benefits %>
+  </div>  
+
+  <div class="field">
+    <%= form.label :general_comments, "Comentarios generales" %>
+    <%= form.text_area :general_comments %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :address, "Dirección" %>
+    <%= form.text_area :address %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :conditions_to_move, "Condiciones para moverse" %>
+    <%= form.text_area :conditions_to_move %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :telephone, "Teléfono de casa" %>
+    <%= form.text_field :telephone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :interview_date, "Fecha de entrevista" %>
+    <%= form.date_select :interview_date, {order: [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year - 20}, {required: true} %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nationality, "Nacionalidad" %>
+    <%= form.text_field :nationality %>
   </div>
 
   <div class="actions">
