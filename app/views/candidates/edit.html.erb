@@ -1,6 +1,18 @@
-<h1>Editing Candidate</h1>
 
-<%= render 'form', candidate: @candidate %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-white">Editar candidato</h1>
 
-<%= link_to 'Show', @candidate %> |
-<%= link_to 'Back', candidates_path %>
+      <div class="card text-white bg-dark m-2 p-2">
+        <%= render 'form', candidate: @candidate %>
+      </div>
+
+      <div class="btn-group">
+        <%= link_to 'Show', @candidate, class: "btn btn-success" %>
+        <%= link_to 'Back', candidates_path, class: "btn btn-info"%>
+      </div>
+
+    </div>
+  </div>
+</div>
