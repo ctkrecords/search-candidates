@@ -1,154 +1,163 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Nombre completo:</strong>
-  <%= @candidate.name %>
-</p>
-
-<p>
-  <strong>Celular:</strong>
-  <%= @candidate.cellphone %>
-</p>
-
-<p>
-  <strong>Fecha de nacimiento:</strong>
-  <%= @candidate.birth_date %>
-</p>
-
-<p>
-  <strong>Género:</strong>
-  <%= @candidate.genre %>
-</p>
-
-<p>
-  <strong>Nivel educativo:</strong>
-  <%= @candidate.education_level %>
-</p>
-
-<p>
-  <strong>Estatus:</strong>
-  <%= @candidate.status %>
-</p>
-
-<p>
-  <strong>Carrera:</strong>
-  <%= @candidate.careers %>
-</p>
-
-<p>
-  <strong>Idiomas:</strong>
-  <%= @candidate.languages %>
-</p>
-
-<p>
-  <strong>Áreas de desempeño:</strong>
-  <%= @candidate.performance_areas %>
-</p>
-
-<p>
-  <strong>Industria:</strong>
-  <%= @candidate.industry %>
-</p>
-
-<p>
-  <strong>Candidato regional:</strong>
-  <%= @candidate.regional_candidate %>
-</p>
-
-<p>
-  <strong>Estado civil:</strong>
-  <%= @candidate.civil_status %>
-</p>
-
-<p>
-  <strong>Skills:</strong>
-  <%= @candidate.skills %>
-</p>
-
-<p>
-  <strong>Dispuesto a reubicarse:</strong>
-  <%= @candidate.relocate %>
-</p>
-
-<p>
-  <strong>Dispuesto a reubicarse:</strong>
-  <%= @candidate.relocate %>
-</p>
-
-<p>
-  <strong>Fuente de reclutamiento:</strong>
-  <%= @candidate.recruitment_source %>
-</p>
-
-<p>
-  <strong>Dispuesto a reubicarse:</strong>
-  <%= @candidate.relocate %>
-</p>
-
-<p>
-  <strong>Salario actual / Último salario (USD):</strong>
-  <%= @candidate.actual_salary %>
-</p>
-
-<p>
-  <strong>Salario variable (USD):</strong>
-  <%= @candidate.variable_salary %>
-</p>
-
-<p>
-  <strong>Aspiración salarial (USD):</strong>
-  <%= @candidate.wage_aspiration %>
-</p>
-
-<p>
-  <strong>Posición / Cargo actual:</strong>
-  <%= @candidate.position %>
-</p>
-
-<p>
-  <strong>Datos cuadro comparativo:</strong>
-  <%= @candidate.comparative_chart %>
-</p>
-
-<p>
-  <strong>Beneficio específico:</strong>
-  <%= @candidate.specific_benefit %>
-</p>
-
-<p>
-  <strong>Beneficios generales:</strong>
-  <%= @candidate.general_benefits %>
-</p>
-
-<p>
-  <strong>Comentarios generales:</strong>
-  <%= @candidate.general_comments %>
-</p>
-
-<p>
-  <strong>Dirección:</strong>
-  <%= @candidate.address %>
-</p>
-
-<p>
-  <strong>Condiciones para moverse:</strong>
-  <%= @candidate.conditions_to_move %>
-</p>
-
-<p>
-  <strong>Teléfono de casa:</strong>
-  <%= @candidate.telephone %>
-</p>
-
-<p>
-  <strong>Fecha de entrevista:</strong>
-  <%= @candidate.interview_date %>
-</p>
-
-<p>
-  <strong>Nacionalidad:</strong>
-  <%= @candidate.nationality %>
-</p>
-
-<%= link_to 'Edit', edit_candidate_path(@candidate) %> |
-<%= link_to 'Back', candidates_path %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+        <p id="notice"><%= notice %></p>
+        <div class="card text-white bg-dark m-2 p-2">
+            <p>
+                <strong>Nombre completo:</strong>
+                <%= @candidate.name %>
+              </p>
+              
+              <p>
+                <strong>Celular:</strong>
+                <%= @candidate.cellphone %>
+              </p>
+              
+              <p>
+                <strong>Fecha de nacimiento:</strong>
+                <%= @candidate.birth_date %>
+              </p>
+              
+              <p>
+                <strong>Género:</strong>
+                <%= @candidate.genre %>
+              </p>
+              
+              <p>
+                <strong>Nivel educativo:</strong>
+                <%= @candidate.education_level %>
+              </p>
+              
+              <p>
+                <strong>Estatus:</strong>
+                <%= @candidate.status %>
+              </p>
+              
+              <p>
+                <strong>Carrera:</strong>
+                <%= @candidate.careers %>
+              </p>
+              
+              <p>
+                <strong>Idiomas:</strong>
+                <%= @candidate.languages %>
+              </p>
+              
+              <p>
+                <strong>Áreas de desempeño:</strong>
+                <%= @candidate.performance_areas %>
+              </p>
+              
+              <p>
+                <strong>Industria:</strong>
+                <%= @candidate.industry %>
+              </p>
+              
+              <p>
+                <strong>Candidato regional:</strong>
+                <%= @candidate.regional_candidate %>
+              </p>
+              
+              <p>
+                <strong>Estado civil:</strong>
+                <%= @candidate.civil_status %>
+              </p>
+              
+              <p>
+                <strong>Skills:</strong>
+                <%= @candidate.skills %>
+              </p>
+              
+              <p>
+                <strong>Dispuesto a reubicarse:</strong>
+                <%= @candidate.relocate %>
+              </p>
+              
+              <p>
+                <strong>Dispuesto a reubicarse:</strong>
+                <%= @candidate.relocate %>
+              </p>
+              
+              <p>
+                <strong>Fuente de reclutamiento:</strong>
+                <%= @candidate.recruitment_source %>
+              </p>
+              
+              <p>
+                <strong>Dispuesto a reubicarse:</strong>
+                <%= @candidate.relocate %>
+              </p>
+              
+              <p>
+                <strong>Salario actual / Último salario (USD):</strong>
+                <%= @candidate.actual_salary %>
+              </p>
+              
+              <p>
+                <strong>Salario variable (USD):</strong>
+                <%= @candidate.variable_salary %>
+              </p>
+              
+              <p>
+                <strong>Aspiración salarial (USD):</strong>
+                <%= @candidate.wage_aspiration %>
+              </p>
+              
+              <p>
+                <strong>Posición / Cargo actual:</strong>
+                <%= @candidate.position %>
+              </p>
+              
+              <p>
+                <strong>Datos cuadro comparativo:</strong>
+                <%= @candidate.comparative_chart %>
+              </p>
+              
+              <p>
+                <strong>Beneficio específico:</strong>
+                <%= @candidate.specific_benefit %>
+              </p>
+              
+              <p>
+                <strong>Beneficios generales:</strong>
+                <%= @candidate.general_benefits %>
+              </p>
+              
+              <p>
+                <strong>Comentarios generales:</strong>
+                <%= @candidate.general_comments %>
+              </p>
+              
+              <p>
+                <strong>Dirección:</strong>
+                <%= @candidate.address %>
+              </p>
+              
+              <p>
+                <strong>Condiciones para moverse:</strong>
+                <%= @candidate.conditions_to_move %>
+              </p>
+              
+              <p>
+                <strong>Teléfono de casa:</strong>
+                <%= @candidate.telephone %>
+              </p>
+              
+              <p>
+                <strong>Fecha de entrevista:</strong>
+                <%= @candidate.interview_date %>
+              </p>
+              
+              <p>
+                <strong>Nacionalidad:</strong>
+                <%= @candidate.nationality %>
+              </p>
+              
+              <div class="btn-group">
+                <%= link_to 'Edit', edit_candidate_path(@candidate) %>
+                <%= link_to 'Back', candidates_path %>
+              </div>
+        </div>  
+    </div>
+  </div>
+</div>

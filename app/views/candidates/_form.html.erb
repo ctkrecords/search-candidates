@@ -12,171 +12,230 @@
       </div>
     <% end %>
   <div class="row">
-    <div class="col-6">
-      <div class="form-group">
-        <%= form.label :name, "Nombre" %>
+    <div class="col-6 mt-3">
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <%= form.label :name, "Nombre", class: "input-group-text" %>
+          </div>
         <%= form.text_field :name, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :cellphone, "Celular" %>
+      <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <%= form.label :cellphone, "Celular", class: "input-group-text" %>
+          </div>
         <%= form.text_field :cellphone, class: "form-control" %>
       </div>
 
-      <div class="form-group dropdown">
-        <%= form.label :birth_date, "Fecha de nacimiento" %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :birth_date, "Fecha de nacimiento", class: "input-group-text" %>
+        </div>
         <%= form.date_select :birth_date,
-                              {
-                                order: [:day, :month, :year],
-                                start_year: Date.today.year - 10,
-                                end_year: Date.today.year - 100
-                              },
-                                {required: true, class: "btn btn-secondary"} %>
+            {
+              order: [:day, :month, :year],
+              start_year: Date.today.year - 10,
+              end_year: Date.today.year - 100
+            },
+            {required: true, class: "form-control"} %>
       </div>
 
-      <div class="form-group dropdown">
-        <%= form.label :genre, "Género" %>
-        <%= form.select(:genre, Candidate::GENRE_LIST, class: "btn btn-secondary") %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <%= form.label :genre, "Género", class: "input-group-text" %>
+        </div>
+          <%= form.select(:genre, Candidate::GENRE_LIST, {} ,{class: 'form-control custom-select btn'})%>    
       </div>
 
-      <div class="form-group">
-        <%= form.label :education_level, "Nivel Educativo" %>
-        <%= form.select(:education_level, Candidate::EDUCATION_LEVEL) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <%= form.label :education_level, "Nivel Educativo", class: "input-group-text" %>
+        </div>
+        <%= form.select(:education_level, Candidate::EDUCATION_LEVEL, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :status, "Estatus" %>
-        <%= form.select(:status, Candidate::STATUS) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <%= form.label :status, "Estatus", class: "input-group-text" %>
+        </div>
+        <%= form.select(:status, Candidate::STATUS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :careers, "Carrera" %>
-        <%= form.select(:careers, Candidate::CAREERS) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :careers, "Carrera", class: "input-group-text" %>
+        </div>
+        <%= form.select(:careers, Candidate::CAREERS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
 
-      <div class="form-group">
-        <%= form.label :languages, "Idiomas" %>
-        <%= form.select(:languages, Candidate::LANGUAGES) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :languages, "Idiomas", class: "input-group-text" %>
+        </div>
+        <%= form.select(:languages, Candidate::LANGUAGES, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :performance_areas, "Áreas de desempeño" %>
-        <%= form.select(:performance_areas, Candidate::PERFORMANCE_AREAS) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :performance_areas, "Áreas de desempeño", class: "input-group-text" %>
+        </div>
+        <%= form.select(:performance_areas, Candidate::PERFORMANCE_AREAS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :industry, "Industria" %>
-        <%= form.select(:industry, Candidate::INDUSTRY) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :industry, "Industria", class: "input-group-text" %>
+        </div>
+        <%= form.select(:industry, Candidate::INDUSTRY, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :regional_candidate, "Candidato regional" %>
-        <%= form.select(:regional_candidate, Candidate::REGIONAL_CANDIDATE) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :regional_candidate, "Candidato regional", class: "input-group-text" %>
+        </div>
+        <%= form.select(:regional_candidate, Candidate::REGIONAL_CANDIDATE, {} ,{class: 'form-control custom-select btn'}) %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :civil_status, "Estado civil" %>
-        <%= form.select(:civil_status, Candidate::CIVIL_STATUS) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :civil_status, "Estado civil", class: "input-group-text" %>
+        </div>
+        <%= form.select(:civil_status, Candidate::CIVIL_STATUS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :skills, "Skills" %>
-        <%= form.select(:skills, Candidate::SKILLS) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :skills, "Skills", class: "input-group-text" %>
+        </div>
+        <%= form.select(:skills, Candidate::SKILLS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :email, "Email" %>
-        <%= form.email_field :email %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :email, "Email", class: "input-group-text" %>
+        </div>
+        <%= form.email_field :email, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :actual_company, "Compañía actual" %>
-        <%= form.text_field :actual_company %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :actual_company, "Compañía actual", class: "input-group-text" %>
+        </div>
+        <%= form.text_field :actual_company, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :recruitment_source, "Fuente de reclutamiento" %>
-        <%= form.select(:recruitment_source, Candidate::RECRUITMENT_SOURCE) %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :recruitment_source, "Fuente de reclutamiento", class: "input-group-text" %>
+        </div>
+        <%= form.select(:recruitment_source, Candidate::RECRUITMENT_SOURCE, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :relocate, "Dispuesto a reubicarse" %>
-        <%= form.select(:relocate, Candidate::RELOCATE) %>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :actual_salary, "Salario actual / Último salario (USD)" %>
-        <%= form.text_field :actual_salary, required: true %>
-      </div>
-
-      <div class="form-group">
-        <%= form.label :variable_salary, "Salario variable (USD)" %>
-        <%= form.text_field :variable_salary %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :relocate, "Dispuesto a reubicarse", class: "input-group-text" %>
+        </div>
+        <%= form.select(:relocate, Candidate::RELOCATE, {} ,{class: 'form-control custom-select btn'}) %>
       </div>
 
     </div>
 
-    <div class="col-6">
+    <div class="col-6 mt-3">
 
-      <div class="form-group">
-        <%= form.label :wage_aspiration, "Aspiración salarial (USD)" %>
-        <%= form.text_field :wage_aspiration %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :actual_salary, "Salario actual / Último salario (USD)", class: "input-group-text" %>
+        </div>
+        <%= form.text_field :actual_salary, required: true, class: "form-control" %>
+      </div>
+        
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :variable_salary, "Salario variable (USD)", class: "input-group-text" %>
+        </div>
+        <%= form.text_field :variable_salary, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :position, "Posición / Cargo Actual" %>
-        <%= form.text_field :position %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :wage_aspiration, "Aspiración salarial (USD)", class: "input-group-text" %>
+        </div>
+        <%= form.text_field :wage_aspiration, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :comparative_chart, "Datos cuadro comparativo" %>
-        <%= form.text_area :comparative_chart %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :position, "Posición / Cargo Actual", class: "input-group-text" %>
+        </div>
+        <%= form.text_field :position, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :specific_benefit, "Beneficio específico" %>
-        <%= form.text_area :specific_benefit %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :comparative_chart, "Datos cuadro comparativo", class: "input-group-text" %>
+        </div>
+        <%= form.text_area :comparative_chart, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-          <%= form.label :general_benefits, "Beneficios generales" %>
-          <%= form.text_area :general_benefits %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :specific_benefit, "Beneficio específico", class: "input-group-text" %>
+        </div>
+        <%= form.text_area :specific_benefit, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :general_comments, "Comentarios generales" %>
-        <%= form.text_area :general_comments %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <%= form.label :general_benefits, "Beneficios generales", class: "input-group-text" %>
+        </div>
+          <%= form.text_area :general_benefits, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :address, "Dirección" %>
-        <%= form.text_area :address %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :general_comments, "Comentarios generales", class: "input-group-text" %>
+        </div>
+        <%= form.text_area :general_comments, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :conditions_to_move, "Condiciones para moverse" %>
-        <%= form.text_area :conditions_to_move %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :address, "Dirección", class: "input-group-text" %>
+        </div>
+        <%= form.text_area :address, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :telephone, "Teléfono de casa" %>
-        <%= form.text_field :telephone %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :conditions_to_move, "Condiciones para moverse", class: "input-group-text" %>
+        </div>
+        <%= form.text_area :conditions_to_move, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :interview_date, "Fecha de entrevista" %>
-        <%= form.date_select :interview_date, {order: [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year - 20}, {required: true} %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :telephone, "Teléfono de casa", class: "input-group-text" %>
+        </div>
+        <%= form.text_field :telephone, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= form.label :nationality, "Nacionalidad" %>
-        <%= form.text_field :nationality %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :interview_date, "Fecha de entrevista", class: "input-group-text" %>
+        </div>
+        <%= form.date_select :interview_date, {order: [:day, :month, :year], start_year: Date.today.year, end_year: Date.today.year - 20}, {required: true, class: "form-control"} %>
       </div>
 
-      <div class="actions">
-        <%= form.submit %>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= form.label :nationality, "Nacionalidad", class: "input-group-text" %>
+        </div>
+        <%= form.text_field :nationality, class: "form-control" %>
       </div>
+    </div>
+    <div class="container actions text-center">
+        <%= form.submit "Guardar", class: "btn btn-success btn-lg" %>
     </div>
   </div>
 </div>
