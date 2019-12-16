@@ -104,19 +104,14 @@
         <%= form.select(:civil_status, Candidate::CIVIL_STATUS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <!--div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <%= form.label :skills, "Skills", class: "input-group-text" %>
+      <div class="card mb-3 pt-2 pb-2">
+        <%= form.fields_for :skills do |skills_form| %>
+          <%= render  "skill_fields", f: skills_form %>
+        <% end %>
+        <div class="container text-center">
+          <%= link_to_add_association 'Agregar skill', form, :skills, class: 'btn btn-success' %>
         </div>
-        <%= form.select(:skills, Candidate::SKILLS, {} ,{class: 'form-control text-center'}) %>
-      </div-->
-
-    <%= form.fields_for :skills do |skills_form| %>
-    <div class="form-group">
-      <%= skills_form.label :name, "Skills" %>
-      <%= skills_form.select(:name, Candidate::SKILLS) %>
-    </div>
-    <% end %>
+      </div>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -242,7 +237,7 @@
       </div>
     </div>
     <div class="container actions text-center">
-        <%= form.submit "Guardar", class: "btn btn-success btn-lg" %>
+        <%= form.submit "Guardar", class: "btn btn-primary btn-lg" %>
     </div>
   </div>
 </div>

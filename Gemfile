@@ -68,3 +68,4 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'cocoon', '~> 1.2', '>= 1.2.14'

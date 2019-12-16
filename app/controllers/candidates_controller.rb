@@ -16,7 +16,6 @@ class CandidatesController < ApplicationController
   # GET /candidates/new
   def new
     @candidate = Candidate.new
-    3.times { @candidate.skills.build }
   end
 
   # GET /candidates/1/edit
