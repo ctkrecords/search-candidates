@@ -104,12 +104,19 @@
         <%= form.select(:civil_status, Candidate::CIVIL_STATUS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="input-group mb-3">
+      <!--div class="input-group mb-3">
         <div class="input-group-prepend">
           <%= form.label :skills, "Skills", class: "input-group-text" %>
         </div>
         <%= form.select(:skills, Candidate::SKILLS, {} ,{class: 'form-control text-center'}) %>
-      </div>
+      </div-->
+
+    <%= form.fields_for :skills do |skills_form| %>
+    <div class="form-group">
+      <%= skills_form.label :name, "Skills" %>
+      <%= skills_form.select(:name, Candidate::SKILLS) %>
+    </div>
+    <% end %>
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">

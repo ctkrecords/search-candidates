@@ -1,6 +1,10 @@
 class Candidate < ApplicationRecord
     belongs_to :user
-    
+    has_many :skills, dependent: :delete_all
+    accepts_nested_attributes_for :skills, 
+                                  allow_destroy: true,
+                                  reject_if: lambda { |attrs| attrs['name'].blank? }
+
     GENRE_LIST = ["Masculino", "Femenino"]
     EDUCATION_LEVEL = ["Bachiller", "Estudiante Universitario", "Técnico", "Diplomado", "Licenciatura", "Ingenieria", "Maestria", "Postgrado", "MBA", "Doctorado", "PHD"]
     STATUS = ["Empleado", "Desempleado", "No disponible", "Sin Asignar"] 

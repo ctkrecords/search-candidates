@@ -16,6 +16,7 @@ class CandidatesController < ApplicationController
   # GET /candidates/new
   def new
     @candidate = Candidate.new
+    3.times { @candidate.skills.build }
   end
 
   # GET /candidates/1/edit
@@ -71,9 +72,9 @@ class CandidatesController < ApplicationController
     def candidate_params
       params.require(:candidate).permit(:name, :cellphone, :birth_date, :genre, :education_level, :careers, 
                                         :status, :languages, :performance_areas, :industry, :regional_candidate,
-                                        :civil_status, :skills, :recruitment_source, :relocate, :actual_salary,
+                                        :civil_status, :recruitment_source, :relocate, :actual_salary, :email,
                                         :variable_salary, :wage_aspiration, :position, :comparative_chart, :specific_benefit,
                                         :general_benefits, :general_comments, :address, :conditions_to_move, :telephone,
-                                        :interview_date, :nationality)
+                                        :interview_date, :nationality, :actual_company ,skills_attributes: [:id, :name, :_destroy])
     end
 end
