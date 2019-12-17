@@ -25,7 +25,16 @@
               
               <p>
                 <strong>Nivel educativo:</strong>
-                <%= @candidate.education_level %>
+                <% @candidate.education_levels.each do |e| %>
+                  <p><%= e.name %></p>
+                <% end %>
+              </p>
+
+              <p>
+                <strong>Carrera:</strong>
+                <% @candidate.careers.each do |c| %>
+                  <p><%= c.name %></p>
+                <% end %>
               </p>
               
               <p>
@@ -33,19 +42,19 @@
                 <%= @candidate.status %>
               </p>
               
-              <p>
-                <strong>Carrera:</strong>
-                <%= @candidate.careers %>
-              </p>
               
               <p>
                 <strong>Idiomas:</strong>
-                <%= @candidate.languages %>
+                <% @candidate.languages.each do |l| %>
+                  <p><%= l.name %></p>
+                <% end %>
               </p>
               
               <p>
                 <strong>Áreas de desempeño:</strong>
-                <%= @candidate.performance_areas %>
+                <% @candidate.performance_areas.each do |p| %>
+                  <p><%= p.name %></p>
+                <% end %>
               </p>
               
               <p>
@@ -155,9 +164,9 @@
                 <%= @candidate.nationality %>
               </p>
               
-              <div class="btn-group">
-                <%= link_to 'Edit', edit_candidate_path(@candidate) %>
-                <%= link_to 'Back', candidates_path %>
+              <div class="btn-group text-center" style="max-width: 20%">
+                <%= link_to 'Editar', edit_candidate_path(@candidate), class: "btn btn-warning" %>
+                <%= link_to 'Regresar', candidates_path, class: "btn btn-info" %>
               </div>
         </div>  
     </div>

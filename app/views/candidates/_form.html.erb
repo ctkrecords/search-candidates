@@ -47,12 +47,20 @@
           <%= form.select(:genre, Candidate::GENRE_LIST, {} ,{class: 'form-control custom-select btn'})%>    
       </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <%= form.label :education_level, "Nivel Educativo", class: "input-group-text" %>
+     
+      <div class="card mb-3 pt-2 pb-2">
+        <%= form.fields_for :education_levels do |education_levels| %>
+          <%= render  "education_level_fields", f: education_levels %>
+        <% end %>
+        <%= form.fields_for :careers do |careers| %>
+          <%= render  "career_fields", f: careers %>
+        <% end %>
+        <div class="container text-center">
+          <%= link_to_add_association 'Agregar nivel educativo', form, :education_levels, class: 'btn btn-success' %>
+          <%= link_to_add_association 'Agregar carrera', form, :careers, class: 'btn btn-success' %>
         </div>
-        <%= form.select(:education_level, Candidate::EDUCATION_LEVEL, {} ,{class: 'form-control text-center'}) %>
       </div>
+      
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -61,26 +69,22 @@
         <%= form.select(:status, Candidate::STATUS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <%= form.label :careers, "Carrera", class: "input-group-text" %>
+      <div class="card mb-3 pt-2 pb-2">
+         <%= form.fields_for :languages do |languages| %>
+            <%= render  "language_fields", f: languages %>
+        <% end %>
+        <div class="container text-center">
+          <%= link_to_add_association 'Agregar idioma', form, :languages, class: 'btn btn-success' %>
         </div>
-        <%= form.select(:careers, Candidate::CAREERS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <%= form.label :languages, "Idiomas", class: "input-group-text" %>
+      <div class="card mb-3 pt-2 pb-2">
+         <%= form.fields_for :performance_areas do |performance_areas| %>
+            <%= render  "performance_area_fields", f: performance_areas %>
+        <% end %>
+        <div class="container text-center">
+          <%= link_to_add_association 'Agregar área de desempeño', form, :performance_areas, class: 'btn btn-success' %>
         </div>
-        <%= form.select(:languages, Candidate::LANGUAGES, {} ,{class: 'form-control text-center'}) %>
-      </div>
-
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <%= form.label :performance_areas, "Áreas de desempeño", class: "input-group-text" %>
-        </div>
-        <%= form.select(:performance_areas, Candidate::PERFORMANCE_AREAS, {} ,{class: 'form-control text-center'}) %>
       </div>
 
       <div class="input-group mb-3">

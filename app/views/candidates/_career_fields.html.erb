@@ -1,0 +1,10 @@
+<div class="form-group nested-fields">
+    <div class="input-group mb-1">
+        <div class="input-group-prepend">
+          <%= f.label :name, "Carrera", class: "input-group-text" %>
+        </div>
+        <%= f.select(:name, Candidate::CAREERS, {} ,{class: 'form-control text-center'}) %>
+        <%= link_to_remove_association 'Eliminar carrera', f, class: 'btn btn-danger' %>
+    </div>
+</div>    
+   

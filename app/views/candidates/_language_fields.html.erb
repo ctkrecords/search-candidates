@@ -1,0 +1,9 @@
+<div class="form-group nested-fields">
+    <div class="input-group mb-1">
+        <div class="input-group-prepend">
+            <%= f.label :name, "Idiomas", class: "input-group-text" %>
+        </div>
+        <%= f.select(:name, Candidate::LANGUAGES, {} ,{class: 'form-control text-center'}) %>
+        <%= link_to_remove_association 'Eliminar idioma', f, class: 'btn btn-danger' %>
+    </div>
+</div>

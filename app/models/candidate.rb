@@ -1,14 +1,32 @@
 class Candidate < ApplicationRecord
     belongs_to :user
+    has_many :education_levels, dependent: :delete_all
+    accepts_nested_attributes_for :education_levels,
+                                  allow_destroy: true,
+                                  reject_if: lambda { |attrs| attrs['name'].blank? }
     has_many :skills, dependent: :delete_all
     accepts_nested_attributes_for :skills, 
                                   allow_destroy: true,
                                   reject_if: lambda { |attrs| attrs['name'].blank? }
+    has_many :careers, dependent: :delete_all
+    accepts_nested_attributes_for :careers, 
+                                  allow_destroy: true,
+                                  reject_if: lambda { |attrs| attrs['name'].blank? }
+    has_many :languages, dependent: :delete_all                                  
+    accepts_nested_attributes_for :languages, 
+                                  allow_destroy: true,
+                                  reject_if: lambda { |attrs| attrs['name'].blank? }
+    has_many :performance_areas, dependent: :delete_all                                  
+    accepts_nested_attributes_for :performance_areas, 
+                                  allow_destroy: true,
+                                  reject_if: lambda { |attrs| attrs['name'].blank? }
+                                                          
+                              
 
     GENRE_LIST = ["Masculino", "Femenino"]
     EDUCATION_LEVEL = ["Bachiller", "Estudiante Universitario", "Técnico", "Diplomado", "Licenciatura", "Ingenieria", "Maestria", "Postgrado", "MBA", "Doctorado", "PHD"]
     STATUS = ["Empleado", "Desempleado", "No disponible", "Sin Asignar"] 
-    CAREERS = ["Administración", "Administración de Negocios", "Administración/Gestión Pública", "Aeroespacial", "Agronomía", "Alimentos", 
+    CAREERS = ["", "Administración", "Administración de Negocios", "Administración/Gestión Pública", "Aeroespacial", "Agronomía", "Alimentos", 
             "Anestesiología/Inhaloterapia", "Arqueología", "Arquitectura", "Arte Dramático", "Automotriz", "Aviación","Bellas Artes", "Bibliotecología/Documentación",
             "Biología", "Biología Marina", "Biomédica", "Bioquímica", "Ciencias Juridicas / Jurisprudencia", "Civil/Minas", 
             "Comercio Internacional/Exterior", "Computación/Sistemas", "Contabilidad/Auditoría", "Cosmetología", "Comunicaciones", "Crimonología", 

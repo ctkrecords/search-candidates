@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_16_202416) do
+ActiveRecord::Schema.define(version: 2019_12_17_173537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,7 @@ ActiveRecord::Schema.define(version: 2019_12_16_202416) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.string "genre"
-    t.string "education_level"
     t.string "status"
-    t.string "careers"
-    t.string "languages"
-    t.string "performance_areas"
     t.string "industry"
     t.string "regional_candidate"
     t.string "civil_status"
@@ -49,6 +45,38 @@ ActiveRecord::Schema.define(version: 2019_12_16_202416) do
     t.date "interview_date"
     t.string "nationality"
     t.index ["user_id"], name: "index_candidates_on_user_id"
+  end
+
+  create_table "careers", force: :cascade do |t|
+    t.string "name"
+    t.bigint "candidate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidate_id"], name: "index_careers_on_candidate_id"
+  end
+
+  create_table "education_levels", force: :cascade do |t|
+    t.string "name"
+    t.bigint "candidate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidate_id"], name: "index_education_levels_on_candidate_id"
+  end
+
+  create_table "languages", force: :cascade do |t|
+    t.string "name"
+    t.bigint "candidate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidate_id"], name: "index_languages_on_candidate_id"
+  end
+
+  create_table "performance_areas", force: :cascade do |t|
+    t.string "name"
+    t.bigint "candidate_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["candidate_id"], name: "index_performance_areas_on_candidate_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -78,5 +106,9 @@ ActiveRecord::Schema.define(version: 2019_12_16_202416) do
   end
 
   add_foreign_key "candidates", "users"
+  add_foreign_key "careers", "candidates"
+  add_foreign_key "education_levels", "candidates"
+  add_foreign_key "languages", "candidates"
+  add_foreign_key "performance_areas", "candidates"
   add_foreign_key "skills", "candidates"
 end
