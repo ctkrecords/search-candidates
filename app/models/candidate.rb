@@ -20,7 +20,10 @@ class Candidate < ApplicationRecord
     accepts_nested_attributes_for :performance_areas, 
                                   allow_destroy: true,
                                   reject_if: lambda { |attrs| attrs['name'].blank? }
-                                                          
+    has_many :industries, dependent: :delete_all                                  
+    accepts_nested_attributes_for :industries, 
+                                   allow_destroy: true,
+                                   reject_if: lambda { |attrs| attrs['name'].blank? }                                                     
                               
 
     GENRE_LIST = ["Masculino", "Femenino"]

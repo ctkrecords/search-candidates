@@ -59,7 +59,9 @@
               
               <p>
                 <strong>Industria:</strong>
-                <%= @candidate.industry %>
+                <% @candidate.industries.each do |i| %>
+                  <p><%= i.name %></p>
+                  <% end %>
               </p>
               
               <p>

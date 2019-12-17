@@ -87,11 +87,13 @@
         </div>
       </div>
 
-      <div class="input-group mb-3">
-        <div class="input-group-prepend">
-          <%= form.label :industry, "Industria", class: "input-group-text" %>
+      <div class="card mb-3 pt-2 pb-2">
+        <%= form.fields_for :industries do |industries| %>
+          <%= render  "industry_fields", f: industries %>
+        <% end %>
+        <div class="container text-center">
+          <%= link_to_add_association 'Agregar industria', form, :industries, class: 'btn btn-success' %>
         </div>
-        <%= form.select(:industry, Candidate::INDUSTRY, {} ,{class: 'form-control text-center'}) %>
       </div>
 
       <div class="input-group mb-3">
@@ -240,7 +242,7 @@
         <%= form.text_field :nationality, class: "form-control" %>
       </div>
     </div>
-    <div class="container actions text-center">
+    <div class="container actions text-center mb-2">
         <%= form.submit "Guardar", class: "btn btn-primary btn-lg" %>
     </div>
   </div>
