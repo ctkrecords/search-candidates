@@ -1,11 +1,28 @@
 @import "bootstrap";
 
 body{
-  background-color: black;
+  background: #314755;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
 }
 
 .login > .card{
   width: 25rem;
   margin: 0 auto;
   float: none;
+}
+
+#background{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background: url('background.jpg') no-repeat;
+  background-size: cover;
 }
