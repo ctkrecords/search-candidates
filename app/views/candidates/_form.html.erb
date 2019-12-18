@@ -12,7 +12,7 @@
       </div>
     <% end %>
   <div class="row">
-    <div class="col-6 mt-3">
+    <div class="col-12 col-xl-6 mt-3">
       <div class="input-group mb-3">
           <div class="input-group-prepend">
             <%= form.label :name, "Nombre", class: "input-group-text" %>
@@ -149,7 +149,7 @@
 
     </div>
 
-    <div class="col-6 mt-3">
+    <div class="col-12 col-xl-6 mt-3">
 
       <div class="input-group mb-3">
         <div class="input-group-prepend">
@@ -239,7 +239,9 @@
         <div class="input-group-prepend">
           <%= form.label :nationality, "Nacionalidad", class: "input-group-text" %>
         </div>
-        <%= form.text_field :nationality, class: "form-control" %>
+        <%= form.country_select(:country_code, class: "form-control") %>
+        <%#= form.text_field :nationality, class: "form-control" %>
+        <%# form.select(:relocate, Candidate::RELOCATE, {} ,{class: 'form-control custom-select btn'})%>
       </div>
     </div>
     <div class="container actions text-center mb-2">
