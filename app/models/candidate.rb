@@ -79,4 +79,10 @@ class Candidate < ApplicationRecord
     RECRUITMENT_SOURCE = ["Hunting", "Bolsa de empleo en línea", "Redes sociales Search", "Página de Search", 
         "Referido", "Linkedin", "Bolsas de empleo", "Universidades", "Grupo o gremios Especializados"]
     RELOCATE = ["No", "Si"]
+
+    def self.country_name(country_code)
+        country = ISO3166::Country[country_code]
+        country.translations[I18n.locale.to_s] || country.name
+    end
+
 end

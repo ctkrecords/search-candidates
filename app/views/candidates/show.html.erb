@@ -165,6 +165,12 @@
                 <strong>Nacionalidad:</strong>
                 <%= @candidate.nationality %>
               </p>
+
+              <p>
+                <strong>País:</strong>
+                <%= Candidate.country_name(@candidate.country_code) %>
+
+              </p>
               
               <div class="btn-group text-center" style="max-width: 20%">
                 <%= link_to 'Editar', edit_candidate_path(@candidate), class: "btn btn-warning" %>
