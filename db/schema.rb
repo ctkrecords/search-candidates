@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_17_201513) do
+ActiveRecord::Schema.define(version: 2019_12_19_145925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_12_17_201513) do
     t.string "telephone"
     t.date "interview_date"
     t.string "nationality"
+    t.string "country_code"
     t.index ["user_id"], name: "index_candidates_on_user_id"
   end
 
