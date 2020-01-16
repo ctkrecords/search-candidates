@@ -242,18 +242,19 @@
         <%= form.text_field :nationality, class: "form-control" %>
       </div>
 
-      <% I18n.with_locale(:es) do %>
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <%= form.label :country_code, "País", class: "input-group-text" %>
         </div>
-        <%= form.country_select(:country_code, {} ,{class: 'form-control text-center'}) %>
-      <% end %>
+        <%= form.select(:country_code, Candidate::COUNTRIES, {} ,{class: 'form-control text-center'}) %>
       </div>
+
     </div>
+
     <div class="container actions text-center mb-2">
         <%= form.submit "Guardar", class: "btn btn-primary btn-lg" %>
     </div>
+    
   </div>
 </div>
 

@@ -1,8 +1,8 @@
-
-<div class="container">
+<div class="container mb-2">
   <div class="row">
     <div class="col">
       <p id="notice"><%= notice %></p>
+      
 
       <h1 class="text-white">Candidatos</h1>
 
@@ -10,28 +10,103 @@
         <table class="table table-striped text-white">
           <thead>
             <tr>
+              <th scope="col"></th>
               <th scope="col">Nombre</th>
               <th scope="col">Celular</th>
               <th scope="col">Fecha de nacimiento</th>
-              <th scope="col">Reclutador</th>
-              <th scope="col"></th>
+              <th scope="col">Talent Hunter</th>
+              <th scope="col">Género</th>
+              <th scope="col">Nivel educativo</th>
+              <th scope="col">Carrera</th>
+              <th scope="col">Estatus</th>
+              <th scope="col">Idiomas</th>
+              <th scope="col">Áreas de desempeño</th>
+              <th scope="col">Industria</th>
+              <th scope="col">Candidato regional</th>
+              <th scope="col">Estado civil</th>
+              <th scope="col">Skills</th>
+              <th scope="col">Dispuesto a reubicarse</th>
+              <th scope="col">Fuente de reclutamiento</th>
+              <th scope="col">Salario actual / Último salario (USD)</th>
+              <th scope="col">Salario variable (USD)</th>
+              <th scope="col">Aspiración salarial (USD)</th>
+              <th scope="col">Posición / Cargo actual</th>
+              <th scope="col">Datos cuadro comparativo</th>
+              <th scope="col">Beneficio específico</th>
+              <th scope="col">Beneficios generales</th>
+              <th scope="col">Comentarios generales</th>
+              <th scope="col">Dirección</th>
+              <th scope="col">Condiciones para moverse</th>
+              <th scope="col">Teléfono de casa</th>
+              <th scope="col">Fecha de entrevista</th>
+              <th scope="col">Nacionalidad</th>
+              <th scope="col">País</th>
             </tr>
           </thead>
 
           <tbody>
-            <% @candidates.each do |candidate| %>
+            <% @candidates.each do |can| %>
               <tr>
-                <td><%= candidate.name %></td>
-                <td><%= candidate.cellphone %></td>
-                <td><%= candidate.birth_date %></td>
-                <td><%= candidate.user.name %></td>
                 <td>
                   <div class="btn-group" role="group">
-                    <%= link_to 'Ver', candidate, class: "btn btn-success" %>
-                    <%= link_to 'Editar', edit_candidate_path(candidate), class: "btn btn-primary" %>
-                    <%= link_to 'Eliminar', candidate, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el candidato?' }, class: "btn btn-danger" %>
+                    <%= link_to 'Editar', edit_candidate_path(can), class: "btn btn-warning" %>
+                    <%= link_to 'Eliminar', can, method: :delete, data: { confirm: '¿Está seguro que desea eliminar el candidato?' }, class: "btn btn-danger" %>
                   </div>
                 </td>
+                <td><%= can.name %></td>
+                <td><%= can.cellphone %></td>
+                <td><%= can.birth_date.strftime("%d-%m-%Y") %></td>
+                <td><%= can.user.name %></td>
+                <td><%= can.genre %></td>
+                <td>
+                  <% can.education_levels.each do |e| %>
+                    <p><%= e.name %></p>
+                  <% end %>
+                </td>
+                <td>
+                  <% can.careers.each do |c| %>
+                    <p><%= c.name %></p>
+                  <% end %>
+                </td>
+                <td><%= can.status %></td>
+                <td>
+                  <% can.languages.each do |l| %>
+                    <p><%= l.name %></p>
+                  <% end %>
+                </td>
+                <td>
+                  <% can.performance_areas.each do |p| %>
+                    <p><%= p.name %></p>
+                  <% end %>
+                </td>
+                <td>
+                  <% can.industries.each do |i| %>
+                    <p><%= i.name %></p>
+                  <% end %>
+                </td>
+                <td><%= can.regional_candidate %></td>
+                <td><%= can.civil_status %></td>
+                <td>
+                  <% can.skills.each do |s| %>
+                    <p><%= s.name %></p>
+                  <% end %>
+                </td>
+                <td><%= can.relocate %></td>
+                <td><%= can.recruitment_source %></td>
+                <td><%= can.actual_salary %></td>
+                <td><%= can.variable_salary %></td>
+                <td><%= can.wage_aspiration %></td>
+                <td><%= can.position %></td>
+                <td><%= can.comparative_chart %></td>
+                <td><%= can.specific_benefit %></td>
+                <td><%= can.general_benefits %></td>
+                <td><%= can.general_comments %></td>
+                <td><%= can.address %></td>
+                <td><%= can.conditions_to_move %></td>
+                <td><%= can.telephone %></td>
+                <td><%= can.interview_date.strftime("%d-%m-%Y")  %></td>
+                <td><%= can.nationality %></td>
+                <td><%= can.country_code %></td>
               </tr>
             <% end %>
           </tbody>
